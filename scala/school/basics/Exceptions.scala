@@ -6,7 +6,7 @@ package scala.school.basics
 
 import java.io.{BufferedReader, FileNotFoundException, FileReader, IOException}
 
-object Demo {
+object Exceptions {
   def main(args: Array[String]) {
     try {
       val f = new FileReader("input.txt")
@@ -19,13 +19,11 @@ object Demo {
       br.close()
       f.close()
     } catch {
-      case ex : FileNotFoundException => {
+      case ex : FileNotFoundException =>
         println("Missing file exception")
         ex.printStackTrace()
-      }
-      case _ : IOException => {
+      case _ : IOException =>
         println("IO Exception")
-      }
     } finally {
       println("Finally!")
     }
