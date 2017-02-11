@@ -1,3 +1,5 @@
+package scala.school.basics
+
 /**
   * Created by oscartorrenotirado on 11/2/17.
   */

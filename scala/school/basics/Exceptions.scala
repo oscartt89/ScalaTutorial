@@ -1,26 +1,33 @@
+package scala.school.basics
+
 /**
   * Created by oscartorrenotirado on 11/2/17.
   */
 
-object Exceptions {
-  //Try-catch block
-  try {
-    remoteCalculatorService.add(1, 2)
-  } catch {
-    case e: ServerIsDownException => log.error(e, "the remote calculator service is unavailable. should have kept your trusty HP.")
-  } finally {
-    remoteCalculatorService.close()
-  }
+import java.io.{BufferedReader, FileNotFoundException, FileReader, IOException}
 
-  //Try-catch are also expression-oriented
-  val result: Int = try {
-    remoteCalculatorService.add(1, 2)
-  } catch {
-    case e: ServerIsDownException => {
-      log.error(e, "the remote calculator service is unavailable. should have kept your trusty HP.")
-      0
+object Demo {
+  def main(args: Array[String]) {
+    try {
+      val f = new FileReader("input.txt")
+      val br = new BufferedReader(f)
+      var line = br.readLine()
+      while (line != null) {
+        println(line)
+        line = br.readLine()
+      }
+      br.close()
+      f.close()
+    } catch {
+      case ex : FileNotFoundException => {
+        println("Missing file exception")
+        ex.printStackTrace()
+      }
+      case _ : IOException => {
+        println("IO Exception")
+      }
+    } finally {
+      println("Finally!")
     }
-  } finally {
-    remoteCalculatorService.close()
   }
 }

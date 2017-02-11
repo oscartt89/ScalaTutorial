@@ -1,3 +1,5 @@
+package scala.school.basics
+
 /**
   * Created by oscartorrenotirado on 11/2/17.
   */
@@ -5,7 +7,7 @@
 object CaseClasses {
   case class Calculator(brand: String, model: String)
 
-  def calcType(calc: Calculator) = calc match {
+  def calcType(calc: Calculator): String = calc match {
     case Calculator("HP", "20b") => "financial"
     case Calculator("HP", "48g") => "scientific"
     case Calculator("HP", "30b") => "business"

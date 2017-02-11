@@ -1,4 +1,4 @@
-package scala.school.basics;
+package scala.school.basics
 
 /**
   * Created by oscartorrenotirado on 11/2/17.
@@ -6,7 +6,7 @@ package scala.school.basics;
   */
 
 object PartialApplication{
-  def adder(m: Int, n: Int) = m + n
+  def adder(m: Int, n: Int): Int = m + n
 
   def main(args: Array[String]): Unit ={
     val add2 = adder(2, _:Int)
