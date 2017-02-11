@@ -1,3 +1,5 @@
+package scala.javaprogrammers
+
 /**
   * Created by oscartorrenotirado on 11/2/17.
   */
